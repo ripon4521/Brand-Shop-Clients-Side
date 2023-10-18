@@ -19,7 +19,8 @@ const router = createBrowserRouter([
     element: <Layout></Layout>,
     children:[{
       path:"/",
-      element:<Home></Home>
+      element:<Home></Home>,
+      loader:()=>fetch('/brand.json')
     },
       {
         path:"/login",

@@ -9,12 +9,13 @@ const Banner = () => {
 
             <div className="w-full lg:w-1/2">
                 <div className="lg:max-w-lg">
-                    <p className="text-2xl my-3 font-bold drop-shadow-2xl font-ranacho text-green-500">New Collection</p>
-                    <h1 className="text-3xl font-roboto font-extrabold drop-shadow-2xl   lg:text-5xl">Buy iPhone 15 Pro and iPhone 15 Pro Max - your <span className="text-green-500  font-roboto">Apple</span></h1>
+                    <p className="text-2xl my-3 font-bold drop-shadow-lg font-ranacho text-green-500">New Collection</p>
+                    <h1 className="text-3xl font-roboto font-extrabold drop-shadow-lg  lg:text-5xl">Buy iPhone 15 Pro and iPhone 15 Pro Max - your <span className="text-green-500  font-roboto">Apple</span></h1>
                     
-                    <p className="mt-3 font-roboto ">Get $40 - $650 off iPhone 15 Pro or iPhone 15 Pro Max when you trade in an iPhone 7 or newer. 0% financing available. Buy now with free shipping.</p>
+                    <p className="mt-3 font-roboto drop-shadow-lg">Get $40 - $650 off iPhone 15 Pro or iPhone 15 Pro Max when you trade in an iPhone 7 or newer. 0% financing available. Buy now with free shipping.</p>
+                    <p className="text-3xl font-semibold font-ranacho mt-3 text-green-500 drop-shadow-lg">$799.99</p>
                     
-                    <button className="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-green-600 rounded-lg lg:w-auto hover:bg-green-500 focus:outline-none focus:bg-green-500">Shop Now</button>
+                    <button className="w-full px-5 py-2 mt-3 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-green-600 rounded-lg lg:w-auto hover:bg-green-500 focus:outline-none focus:bg-green-500 drop-shadow-lg">Shop Now</button>
                 </div>
             </div>
 

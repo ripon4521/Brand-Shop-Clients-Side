@@ -15,8 +15,8 @@ const search = <>
 
     const navLink =<>
     <li><Link className="font-roboto   font-semibold hover:text-green-500">Home</Link></li>
-    <li><Link className="font-roboto  font-semibold hover:text-green-500 ">About Us</Link></li>
-    <li><Link className="font-roboto  font-semibold hover:text-green-500 ">Products</Link></li>
+    <li><Link className="font-roboto  font-semibold hover:text-green-500 ">Add Product</Link></li>
+    <li><Link className="font-roboto  font-semibold hover:text-green-500 ">My Cart</Link></li>
     <li><Link className="font-roboto  font-semibold  hover:text-green-500">Profile</Link></li>
     </>
     return (
@@ -45,7 +45,7 @@ const search = <>
 
   <div className="navbar-end md:mr-10">
   <Link to="/login">
-  <a className=" font-semibold flex items-center justify-center gap-1 bg-green-500 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
+  <a className="  font-semibold flex items-center justify-center gap-1 bg-green-500 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
   </div>
 </div>
         </div>

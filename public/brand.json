@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "brand_name": "Apple",
+      "img": "https://i.ibb.co/cvSVZDS/apple-logo-removebg-preview.png"
+    },
+    {
+      "id": 2,
+      "brand_name": "Samsung",
+      "img": "https://i.ibb.co/HP3hDZc/256-144-2-removebg-preview.png"
+    },
+    {
+      "id": 3,
+      "brand_name": "Sony",
+      "img": "https://i.ibb.co/BsWnWCv/Sony-Logo-removebg-preview.png"
+    },
+    {
+      "id": 4,
+      "brand_name": "Google",
+      "img": "https://i.ibb.co/NsFjq2v/Google-logo-removebg-preview.png"
+    },
+    {
+      "id": 5,
+      "brand_name": "Intel",
+      "img": "https://i.ibb.co/2YYdppk/intel-removebg-preview.png"
+    }
+  ]
