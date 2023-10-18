@@ -4,10 +4,13 @@ import Navbar from "../components/Home/Navbar";
 
 const Layout = () => {
     return (
-        <div className="container mx-auto">
+       <div>
+         <div className="container mx-auto">
             <Navbar></Navbar>
-            <Outlet></Outlet>
+           
         </div>
+        <Outlet></Outlet>
+       </div>
     );
 };
 
