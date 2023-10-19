@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily:{
         roboto:[ 'Roboto', 'sans-serif'],
-        ranacho:['Rancho', 'cursive']
+        ranacho:['Rancho', 'cursive'],
+        bebsnu:['Bebas Neue', 'sans-serif']
       }
     },
   },

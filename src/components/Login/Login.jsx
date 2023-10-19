@@ -2,16 +2,40 @@
 import { useContext } from 'react';
 import { AiFillStar   } from 'react-icons/ai';
 import { AuthContext } from '../Auth/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 const Login = () => {
-    const {login}= useContext(AuthContext)
+    const {googleLogin ,login}= useContext(AuthContext)
+
+
+
+    const handleLogin = (e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const passward = e.target.passward.value;
+       login(email ,passward)
+       .then(result => {
+        toast.success('Login SuccessFull')
+       })
+       .catch(error =>{
+        toast.warning('Provide a valid email & password!')
+       })
+
+    }
+
   const handleGoogleLogin =()=>{
-    login()
+    googleLogin()
     .then(result =>{
         console.log(result);
+        toast.success("Login Successfull")
     })
-    .catch(error => console.log(error.message))
+    .catch(error => {
+  
+        toast.warning(error.message)
+    })
   }
+
 
     return (
         <div className="mt-32">
@@ -20,10 +44,10 @@ const Login = () => {
     <a className=" font-ranacho   normal-case flex items-center font-bold text-3xl"><span className="text-green-500 text-4xl"><AiFillStar></AiFillStar></span> Mobile   <span className="text-green-500 ml-2"> Store</span></a>
     </div>
 
-    <form className="mt-6">
+    <form onSubmit={handleLogin} className="mt-6">
         <div>
-            <label name="username" className="block font-roboto text-green-500  ">Username</label>
-            <input type="text" className="block w-full px-4 py-2 mt-2   border rounded-lg   focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <label name="email"  className="block font-roboto text-green-500  ">Email</label>
+            <input name='email' required type="email" className="block w-full px-4 py-2 mt-2   border rounded-lg   focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" />
         </div>
 
         <div className="mt-4">
@@ -32,11 +56,11 @@ const Login = () => {
                 <a href="#" className="font-roboto text-xs text-green-500 hover:underline">Forget Password?</a>
             </div>
 
-            <input type="password" className="block w-full px-4 py-2 mt-2 border rounded-lg  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <input name='passward' type="password" className="block w-full px-4 py-2 mt-2 border rounded-lg  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" />
         </div>
 
         <div className="mt-6">
-            <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+            <button type='submit' className="w-full px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
                 Sign In
             </button>
         </div>
@@ -67,6 +91,7 @@ const Login = () => {
 
     <p className="mt-8 text-xs font-light text-center "> Dont have an account? <Link to="/signup" className="font-medium text-green-500 hover:underline">Create One</Link></p>
 </div>
+<ToastContainer></ToastContainer>
         </div>
     );
 };

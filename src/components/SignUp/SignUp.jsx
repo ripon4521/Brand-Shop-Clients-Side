@@ -1,12 +1,42 @@
+import { useContext } from 'react';
 import { AiFillStar   } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Auth/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
+const{sighnUp}=useContext(AuthContext);
+
+const handleSubmitBtn=(e)=>{
+   e.preventDefault();
+   const email = e.target.email.value;
+   const password = e.target.password.value;
+   console.log(email , password);
+   sighnUp(email,password)
+   .then(result=>{
+       console.log(result);
+       nvaigate(location?.state? location.state : "/")
+toast.success("Succesfuly Created your Acoount.")
+
+   })
+   .catch(error =>{
+
+       toast.warning(error.message)
+ 
+   })
+
+
+
+    }
+
+
+
     return (
-        <div className="">
-            <section className=" mt-10  mx-auto   " >
+        <div>
+            <section className="   mx-auto   " >
     <div className="container flex items-center  justify-center min-h-screen px-6 mx-auto">
-        <form className="w-full max-w-md">
+        <form onSubmit={handleSubmitBtn} className="w-full max-w-md">
             <div className="flex justify-center mx-auto">
             <a className=" font-ranacho   normal-case flex items-center font-bold text-3xl"><span className="text-green-500 text-4xl"><AiFillStar></AiFillStar></span> Mobile   <span className="text-green-500 ml-2"> Store</span></a>
             </div>
@@ -26,7 +56,7 @@ const SignUp = () => {
                     </svg>
                 </span>
 
-                <input type="text" className="block w-full py-3   border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Username"/>
+                <input name='name' type="text" className="block w-full py-3   border rounded-lg px-11 focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Username"/>
             </div>
 
           
@@ -48,7 +78,7 @@ const SignUp = () => {
                     </svg>
                 </span>
 
-                <input type="email" className="block w-full py-3 border rounded-lg px-11  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address"/>
+                <input name='email' type="email" className="block w-full py-3 border rounded-lg px-11  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address"/>
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -58,21 +88,13 @@ const SignUp = () => {
                     </svg>
                 </span>
 
-                <input type="password" className="block w-full px-10 py-3 border rounded-lg  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password"/>
+                <input name='password' type="password" className="block w-full px-10 py-3 border rounded-lg  focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password"/>
             </div>
 
-            <div className="relative flex items-center mt-4">
-                <span className="absolute">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                </span>
-
-                <input type="password" className="block w-full px-10 py-3  border rounded-lg focus:border-green-400 dark:focus:border-green-300 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Confirm Password"/>
-            </div>
+          
 
             <div className="mt-6">
-                <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50">
+                <button type='submit' className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50">
                     Sign Up
                 </button>
 
@@ -83,6 +105,7 @@ const SignUp = () => {
                 </div>
             </div>
         </form>
+        <ToastContainer></ToastContainer>
     </div>
 </section>
         </div>
