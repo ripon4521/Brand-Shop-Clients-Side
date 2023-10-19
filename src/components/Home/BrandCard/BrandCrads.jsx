@@ -7,7 +7,7 @@ const BrandCrads = ({brand}) => {
 // console.log(loader);
     // console.log(brand);
     return (
-<Link to={`/brands/${brand_name}`}>
+<Link to={`/brand/${brand_name}`}>
 <div  className="hover:scale-105 hover:transition-transform hover:duration-500 hover:ease-in-out ml-24 md:ml-16  lg::ml-10   w-[300px] h-[150px]">
     <img className="w-[200px] h-[100px]  flex" src={brand.img} alt="" />
 

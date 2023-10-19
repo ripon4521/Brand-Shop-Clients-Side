@@ -37,8 +37,8 @@ const BrnadCard = ({load}) => {
                         <p></p>
                         <div className='flex  gap-4 text-xl mt-3'>
                             {/* <h1 className=' btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><AiOutlineShoppingCart></AiOutlineShoppingCart></h1> */}
-                            <Link to={`/brand/${_id}`} className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><CgDetailsMore></CgDetailsMore></Link>
-                            <h1 className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><BsPen></BsPen></h1>
+                            <Link to={`/brands/${_id}`} className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><CgDetailsMore></CgDetailsMore></Link>
+                            <Link to="/update" className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><BsPen></BsPen></Link>
                         </div>
                     </div>
                 </div>

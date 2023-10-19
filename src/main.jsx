@@ -16,16 +16,17 @@ import Home from './components/Home/Home';
 import Product from './components/Page/Product';
 import BrandDetails from './components/Page/BrandDetails';
 import Cart from './components/Page/Cart/Cart';
-import BannerSlider from './components/BannerSilder/BannerSlider';
+
 import Details from './components/Page/Details';
-import { PiRadical } from 'react-icons/pi';
+
 import PrivateRoute from './components/Private/Private';
+import Update from './components/Page/Update';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    errorElement:<Error></Error>,
+    
     children:[{
       path:"/",
       element:<Home></Home>,
@@ -42,18 +43,22 @@ const router = createBrowserRouter([
         element:<Product></Product>,
        
       },{
-        path:"/cart",
-        element:<PrivateRoute><Cart></Cart></PrivateRoute>
+        path:"/cart/",
+        element:<PrivateRoute><Cart></Cart></PrivateRoute>,
+        loader:()=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/products`)
       }
      ,
       {
-        path:"/brands/:brandName",
+        path:"/brand/:brandName",
         element:<BrandDetails></BrandDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/brands/${params.brandName}`)
+        loader:({params})=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brand/${params.brandName}`)
       },{
-        path:"/brand/:_id",
+        path:"/brands/:_id",
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/brand/${params._id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brands/${params._id}`)
+      },{
+        path:'/update',
+        element:<Update></Update>
       }
     ]
 

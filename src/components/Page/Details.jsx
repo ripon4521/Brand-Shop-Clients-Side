@@ -5,6 +5,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BsPen } from 'react-icons/bs';
 import { useContext } from 'react';
 import { AuthContext } from '../Auth/AuthProvider';
+import Swal from 'sweetalert2';
+import { reload } from 'firebase/auth';
 
 
 const Details = () => {
@@ -14,26 +16,40 @@ const Details = () => {
 
 
     const phone = useLoaderData();
-    const {_id , productName , price,url}= phone;
-    const cart = {
-        userData,
-    _id, 
-    productName,
-    price, 
-    url
+    // const {_id , productName , price,url}= phone;
+    // const cart = {
+    //     userData,
+    // _id, 
+    // productName,
+    // price, 
+    // url
+    // }
+    // console.log(cart);
+    const newData = {
+        ...phone , userData
     }
+
+    delete newData._id;
     const handleCart =  ()=>{
-        fetch('http://localhost:5000/product',{
+        fetch('https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/product',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
-            body:JSON.stringify(cart)
+            body:JSON.stringify(newData)
         }
         )
         .then(res=> res.json())
         .then (data =>{
             console.log(data);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your order has been saved to cart !',
+                showConfirmButton: false,
+                timer: 1500
+              })
+             
         })
     }
 

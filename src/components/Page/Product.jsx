@@ -21,7 +21,7 @@ const newProduct = {
 }
 console.log(newProduct);
 
-    fetch('http://localhost:5000/brand',{
+    fetch('https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brand',{
         method:"POST",
         headers:{
             "content-type":"application/json"

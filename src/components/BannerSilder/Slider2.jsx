@@ -5,8 +5,8 @@ const Slider2 = () => {
         <div>
              <div className="">
        <div className="flex flex-col md:flex-row container mx-auto   items-center">
-            <div className="lg:ml-36 mt-10 ">
-                <img className="w-[300px]  md:w-[800px] rotate-6" src="https://o.remove.bg/downloads/9aa6c579-1f7c-4a30-a49b-9fd02913766a/Apple_iphone_11-rosette-family-lineup-091019_big.jpg.large-removebg-preview.png" alt="" />
+            <div className="lg:ml-36  ">
+                <img className="w-[300px]  md:w-[800px] rotate-6" src="https://i.ibb.co/sJLF90Y/iphone15pro-digitalmat-gallery-3-202309-removebg-preview.png" alt="" />
             </div>
             <div className="ml-20">
             <p className="lg:text-4xl md:text-3xl text-2xl  font-ranacho text-gray-500 mt-4 drop-shadow-lg">Simple & Modern</p>
