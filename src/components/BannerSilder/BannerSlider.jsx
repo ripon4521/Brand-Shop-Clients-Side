@@ -10,9 +10,9 @@ import 'swiper/css/navigation';
 
 import './styles.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import Banner from "../Home/Banner";
+
 import Slider2 from "./Slider2";
-import BannerCard from "./BannerCard";
+
 
 
 const BannerSlider = () => {
@@ -44,7 +44,7 @@ const BannerSlider = () => {
  </>
      </div>
 
-<BannerCard></BannerCard>
+
         </div>
     );
 };

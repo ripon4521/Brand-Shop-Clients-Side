@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import BannerSlider from "../BannerSilder/BannerSlider";
+import BrnadCard from "./BrnadCard";
 
 
 
@@ -7,16 +9,24 @@ const BrandDetails = () => {
   
     
   const loader = useLoaderData();
-  console.log(loader);
-//   const {brandName} = useParams();
-// //   console.log(brandName);
-//   const filter = loader.filter(item => item.brandName === brandName);
-//   console.log(filter);
-// //   console.log(loader);
+//   console.log(loader);
+
     return (
         <div>
-            <h1>Hello World</h1>
+            <BannerSlider>
+
+            </BannerSlider>
+
+
+
+    <div className="mx-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+  
+    {
+        loader.map(load =>  <BrnadCard key={load._id} load={load}></BrnadCard> )
+    }
+    </div>
         </div>
+       
     );
 };
 

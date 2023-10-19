@@ -17,6 +17,9 @@ import Product from './components/Page/Product';
 import BrandDetails from './components/Page/BrandDetails';
 import Cart from './components/Page/Cart/Cart';
 import BannerSlider from './components/BannerSilder/BannerSlider';
+import Details from './components/Page/Details';
+import { PiRadical } from 'react-icons/pi';
+import PrivateRoute from './components/Private/Private';
 
 const router = createBrowserRouter([
   {
@@ -39,16 +42,17 @@ const router = createBrowserRouter([
        
       },{
         path:"/cart",
-        element:<Cart></Cart>
-      },{
-        path:"/profile",
-        element:<BannerSlider></BannerSlider>
+        element:<PrivateRoute><Cart></Cart></PrivateRoute>
       }
      ,
       {
         path:"/brands/:brandName",
         element:<BrandDetails></BrandDetails>,
-        loader:()=>fetch(`http://localhost:5000/brands/${brand_name}`)
+        loader:({params})=>fetch(`http://localhost:5000/brands/${params.brandName}`)
+      },{
+        path:"/brand/:_id",
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/brand/${params._id}`)
       }
     ]
 

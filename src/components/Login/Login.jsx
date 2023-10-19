@@ -4,9 +4,11 @@ import { AiFillStar   } from 'react-icons/ai';
 import { AuthContext } from '../Auth/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     const {googleLogin ,login}= useContext(AuthContext)
+    const location = useLocation();
+    const nvaigate = useNavigate();
 
 
 
@@ -17,6 +19,7 @@ const Login = () => {
        login(email ,passward)
        .then(result => {
         toast.success('Login SuccessFull')
+        nvaigate(location?.state? location.state : "/")
        })
        .catch(error =>{
         toast.warning('Provide a valid email & password!')
@@ -29,6 +32,7 @@ const Login = () => {
     .then(result =>{
         console.log(result);
         toast.success("Login Successfull")
+        nvaigate(location?.state? location.state : "/")
     })
     .catch(error => {
   

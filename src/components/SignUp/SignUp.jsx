@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { AiFillStar   } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Auth/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
 const{sighnUp}=useContext(AuthContext);
+const location = useLocation();
+const nvaigate = useNavigate();
 
 const handleSubmitBtn=(e)=>{
    e.preventDefault();
