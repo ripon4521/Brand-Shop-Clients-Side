@@ -35,10 +35,14 @@ const BrnadCard = ({load}) => {
                            </div>
                         </div>
                         <p></p>
-                        <div className='flex  gap-4 text-xl mt-3'>
+                        <div className='flex justify-center gap-6 text-xl mt-3'>
                             {/* <h1 className=' btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><AiOutlineShoppingCart></AiOutlineShoppingCart></h1> */}
-                            <Link to={`/brands/${_id}`} className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><CgDetailsMore></CgDetailsMore></Link>
-                            <Link to="/update" className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><BsPen></BsPen></Link>
+                            <Link to={`/brands/${_id}`} className='btn-outline flex items-center gap-2 font-ranacho hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'> <span>Details</span>
+                              <p>  <CgDetailsMore></CgDetailsMore></p>
+                                </Link>
+                            <Link to={`/update/${_id}`} className='btn-outline flex items-center gap-2 font-ranacho hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'> <span>Update</span>
+                               <p className='text-xl'> <BsPen></BsPen></p>
+                                </Link>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ const Details = () => {
 
     delete newData._id;
     const handleCart =  ()=>{
-        fetch('https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/product',{
+        fetch('https://brand-shop-server-cyan.vercel.app/product',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -76,10 +76,12 @@ const Details = () => {
                            </div>
                         </div>
                         <p></p>
-                        <div className='flex  gap-4 text-xl mt-3'>
-                            <h1 onClick={handleCart}  className=' btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><AiOutlineShoppingCart></AiOutlineShoppingCart></h1>
-                            {/* <Lik to={`/brand/${_id}`} className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><CgDetailsMore></CgDetailsMore></Link> */}
-                            <h1 className='btn-outline hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'><BsPen></BsPen></h1>
+                        <div className='flex justify-center  gap-4 text-xl mt-3'>
+                            <h1 onClick={handleCart}  className=' btn-outline flex gap-3 items-center hover:bg-green-500 rounded drop-shadow-lg hover:text-white px-2 border py-1'> <span>Add Cart</span>
+                                <p><AiOutlineShoppingCart></AiOutlineShoppingCart></p>
+                                </h1>
+                           
+                          
                         </div>
                     </div>
                 </div>

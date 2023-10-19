@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const Product = () => {
     const handleAddProduct =(e)=>{
@@ -34,7 +35,13 @@ console.log(newProduct);
     .then(data => {
         console.log(data)
         if (data.insertedId) {
-            alert('Product Added')
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your product has been added!',
+            showConfirmButton: false,
+            timer: 1500
+          })
 
            
         }

@@ -12,7 +12,6 @@ import AuthProvider from './components/Auth/AuthProvider';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import Home from './components/Home/Home';
-// import Addproduct from './components/Page/Addproduct.JSX';
 import Product from './components/Page/Product';
 import BrandDetails from './components/Page/BrandDetails';
 import Cart from './components/Page/Cart/Cart';
@@ -45,20 +44,25 @@ const router = createBrowserRouter([
       },{
         path:"/cart/",
         element:<PrivateRoute><Cart></Cart></PrivateRoute>,
-        loader:()=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/products`)
+        loader:()=>fetch(`https://brand-shop-server-cyan.vercel.app
+/products`)
       }
      ,
       {
         path:"/brand/:brandName",
         element:<BrandDetails></BrandDetails>,
-        loader:({params})=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brand/${params.brandName}`)
+        loader:({params})=>fetch(`https://brand-shop-server-cyan.vercel.app
+/brand/${params.brandName}`)
       },{
         path:"/brands/:_id",
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-        loader:({params})=>fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/brands/${params._id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-cyan.vercel.app
+/brands/${params._id}`)
       },{
-        path:'/update',
-        element:<Update></Update>
+        path:'/update/:_id',
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
+        loader:({params})=>fetch(`https://brand-shop-server-cyan.vercel.app
+/update/${params._id}`)
       }
     ]
 

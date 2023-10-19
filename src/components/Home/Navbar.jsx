@@ -60,7 +60,7 @@ const search = <>
     </ul>
   </div>
 
-  <div className=" hidden md:block md:ml-16">
+  <div className=" hidden md:block md:ml-6">
   {search}
   </div>
 
@@ -84,7 +84,7 @@ const search = <>
   <a className="  font-semibold flex items-center justify-center gap-1 bg-green-500 text-white px-2 py-2 rounded">Sign In <span><AiOutlineArrowRight></AiOutlineArrowRight></span></a></Link>
     </div>
   }
-
+<input type="checkbox" className="toggle ml-3 hidden md:block bg-green-500" checked />
   </div>
   <ToastContainer></ToastContainer>
 </div>

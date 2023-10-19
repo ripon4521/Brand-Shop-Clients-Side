@@ -30,7 +30,8 @@ const handleDelete = _id=>{
     if (result.isConfirmed) {
       
 
-      fetch(`https://brand-shop-server-qpd4wio2i-dev-ripons-projects.vercel.app/products/${_id}`,{
+      fetch(`https://brand-shop-server-cyan.vercel.app
+/products/${_id}`,{
         method:'DELETE'
       })
       .then(res=> res.json())
