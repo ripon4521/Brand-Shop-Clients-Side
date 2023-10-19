@@ -20,12 +20,13 @@ import Details from './components/Page/Details';
 
 import PrivateRoute from './components/Private/Private';
 import Update from './components/Page/Update';
+import ErrorPage from './components/Error/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    
+    errorElement:<ErrorPage></ErrorPage>,
     children:[{
       path:"/",
       element:<Home></Home>,

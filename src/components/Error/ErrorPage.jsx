@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Error = () => {
+const ErrorPage = () => {
     return (
         <div>
             
@@ -23,4 +23,4 @@ const Error = () => {
     );
 };
 
-export default Error;
+export default ErrorPage;
