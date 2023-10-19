@@ -38,7 +38,7 @@ const search = <>
     <li><Link className="font-roboto   font-semibold hover:text-green-500">Home</Link></li>
     <li><Link to="/addproduct" className="font-roboto  font-semibold hover:text-green-500 ">Add Product</Link></li>
     <li><Link to="/cart" className="font-roboto  font-semibold hover:text-green-500 ">My Cart</Link></li>
-    <li><Link to="/profile" className="font-roboto  font-semibold  hover:text-green-500">Profile</Link></li>
+    
     </>
     return (
         <div className="font-roboto">

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 const BrnadCard = ({load}) => {
 
+    
+
    const { _id} = load;
 
     return (

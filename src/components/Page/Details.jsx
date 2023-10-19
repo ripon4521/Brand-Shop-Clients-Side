@@ -1,18 +1,40 @@
 // import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import {  useLoaderData, useParams } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { CgDetailsMore } from 'react-icons/cg';
+
 import { BsPen } from 'react-icons/bs';
+import { useContext } from 'react';
+import { AuthContext } from '../Auth/AuthProvider';
 
 
 const Details = () => {
-    // const[data , setData]=useState({})
-    const _id= useParams();
-    // console.log(_id);
+    const {user} = useContext(AuthContext)
+    // console.log(user.email);
+    const userData = user.email;
+
+
     const phone = useLoaderData();
-    console.log(phone);
+    const {_id , productName , price,url}= phone;
+    const cart = {
+        userData,
+    _id, 
+    productName,
+    price, 
+    url
+    }
     const handleCart =  ()=>{
-        
+        fetch('http://localhost:5000/product',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(cart)
+        }
+        )
+        .then(res=> res.json())
+        .then (data =>{
+            console.log(data);
+        })
     }
 
     return (

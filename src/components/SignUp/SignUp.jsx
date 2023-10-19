@@ -14,19 +14,45 @@ const handleSubmitBtn=(e)=>{
    e.preventDefault();
    const email = e.target.email.value;
    const password = e.target.password.value;
-   console.log(email , password);
-   sighnUp(email,password)
-   .then(result=>{
-       console.log(result);
-       nvaigate(location?.state? location.state : "/")
-toast.success("Succesfuly Created your Acoount.")
 
-   })
-   .catch(error =>{
+   if (!/[A-Z]/.test(password)) {
+                
+    toast.warning("Add one Upparcase Letter!")
+    return
 
-       toast.warning(error.message)
- 
-   })
+}
+if (password.length < 6) {
+toast.warning("Added At last 8 charcters!")
+// alert("Added At last 8 charcters")
+return
+}
+   
+if (!/[!@#$%^&*()_+]/.test(password)) {
+toast.warning("Added on special chracter!")
+// alert("on special charcter")
+return
+}
+     else{
+        sighnUp(email,password)
+        .then(result=>{
+            console.log(result);
+            nvaigate(location?.state? location.state : "/")
+     toast.success("Succesfuly Created your Acoount.")
+     
+        })
+        .catch(error =>{
+     
+            toast.warning(error.message)
+      
+        })
+       return
+     }
+     
+
+
+
+
+
 
 
 
