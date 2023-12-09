@@ -6,7 +6,7 @@
  <h1>This Website Feauters</h1>
  </div>
 
-- Product Catalog:Display a comprehensive catalog of all the phones and accessories available in your store. Organize it into categories and provide detailed product descriptions, including specifications, prices, and high-quality images.
+- Product Catalog: Display a comprehensive catalog of all the phones and accessories available in your store. Organize it into categories and provide detailed product descriptions, including specifications, prices, and high-quality images.
 
 - Search Option:  Implement a robust search and filtering system that allows users to easily find the products they're looking for. Users should be able to filter by brand, price range, features, and more.
 
